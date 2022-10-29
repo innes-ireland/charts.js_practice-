@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> //free plug in found on w3schools
+    </script>
+</head>
+
+<body>
+    <h1> Exposure graph mock-up</h1>
+    <canvas id="exposureChart1" style="width:100%;max-width:500px"></canvas>
+    <script>
+        var xValues = ["worker_name_1", "worker_name_2", "worker_name_3", "worker_name4"]; // setting names of each worker
+        var yValues = [310, 320, 335, 400]; //setting exposures of each worker
+        var barColors = ["green", "blue", "yellow", "pink",]; //setting colours of bars
+
+        new Chart("exposureChart1" /* this argument has to match the canvas id*/, {
+            type: "bar",
+            data: {
+                labels: xValues, //setting labels on x-axis for each worker
+                datasets: [
+                    {
+                        backgroundColor: barColors, //setting color of each bar
+                        data: yValues, // setting the "height/value" of each bar
+                    }
+                ]
+            },
+
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "exposure calculations 29/10/2022"
+                }
+            }
+        }
+        );
+    </script>
+
+
+
+</body>
+
+</html>
